@@ -21,7 +21,12 @@ router.get('/', async (req, res) => {
         },
       ],
     })
-
+      .then((product) => res.json(product))
+      .catch((err) => {
+        // console.log(err);
+        res.status(400).json(err);
+      }
+      );
 });
 
 // get one product
